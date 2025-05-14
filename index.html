@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沖繩五天四夜自駕遊</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>沖繩五天四夜自駕遊行程</h1>
+            <p class="subtitle">探索日本南方的熱帶天堂</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#overview">行程概覽</a></li>
+                <li><a href="#day1">第一天</a></li>
+                <li><a href="#day2">第二天</a></li>
+                <li><a href="#day3">第三天</a></li>
+                <li><a href="#day4">第四天</a></li>
+                <li><a href="#day5">第五天</a></li>
+                <li><a href="#tips">旅遊貼士</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="overview" class="section">
+        <div class="container">
+            <h2>行程概覽</h2>
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+            <div class="overview-content">
+                <div class="overview-item">
+                    <h3>行程亮點</h3>
+                    <ul>
+                        <li>探索那霸市區的國際通與首里城</li>
+                        <li>體驗美麗海水族館的海洋生物</li>
+                        <li>遊覽古宇利島的絕美海景</li>
+                        <li>漫步於備瀨福木林道的綠蔭下</li>
+                        <li>在萬座毛欣賞壯觀的海蝕地形</li>
+                        <li>享受沖繩道地美食與購物樂趣</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h3>自駕須知</h3>
+                    <ul>
+                        <li>沖繩靠左行駛，與台灣相同</li>
+                        <li>建議提前預約租車，機場取還車最方便</li>
+                        <li>國際駕照必備，請確認有效期</li>
+                        <li>高速公路收費，可考慮使用ETC卡</li>
+                        <li>加油站分自助與服務型，建議先了解操作方式</li>
+                        <li>停車場在觀光區域較多，但市區可能需要收費</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="day1" class="section day-section">
+        <div class="container">
+            <h2>第一天：抵達沖繩・那霸市區探索</h2>
+            <div class="day-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time">上午</div>
+                        <div class="event">
+                            <h3>抵達那霸機場・取車</h3>
+                            <p>抵達沖繩那霸機場後，前往機場租車櫃檯辦理手續並取車。</p>
+                            <p>建議租車公司：OTS、Times Car Rental、Nippon Rent-A-Car</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">中午</div>
+                        <div class="event">
+                            <h3>國際通午餐・逛街</h3>
+                            <p>前往國際通享用午餐，推薦品嚐沖繩麵或塔可飯等當地特色料理。</p>
+                            <p>午餐後可在國際通及第一牧志公設市場逛街購物，體驗沖繩市集文化。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">下午</div>
+                        <div class="event">
+                            <h3>首里城公園</h3>
+                            <p>參觀琉球王國的象徵首里城，了解沖繩的歷史文化。雖然主城因火災重建中，但周邊區域仍值得一遊。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">晚上</div>
+                        <div class="event">
+                            <h3>國際通晚餐・入住酒店</h3>
+                            <p>返回國際通享用晚餐，可嘗試沖繩特色居酒屋。</p>
+                            <p>推薦住宿：那霸市區酒店，如Vessel Hotel Campana、Daiwa Roynet Hotel等</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-spots">
+                    <div class="spot">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Kokusai_dori_Naha_Okinawa.jpg/1280px-Kokusai_dori_Naha_Okinawa.jpg" alt="國際通">
+                        <h4>國際通</h4>
+                        <p>沖繩最著名的購物街，長約1.6公里，兩旁有各式商店、餐廳和紀念品店。</p>
+                    </div>
+                    <div class="spot">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Shuri_Castle_in_Naha_Okinawa_Japan.jpg/1280px-Shuri_Castle_in_Naha_Okinawa_Japan.jpg" alt="首里城">
+                        <h4>首里城</h4>
+                        <p>琉球王國的政治中心，融合了中國和日本的建築風格，是了解沖繩歷史的重要景點。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="day2" class="section day-section">
+        <div class="container">
+            <h2>第二天：北上・美麗海水族館</h2>
+            <div class="day-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time">上午</div>
+                        <div class="event">
+                            <h3>出發前往美麗海水族館</h3>
+                            <p>早餐後，從那霸出發沿著沖繩西海岸北上，車程約2小時。</p>
+                            <p>途中可在殘波岬燈塔短暫停留，欣賞美麗的海景。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">中午</div>
+                        <div class="event">
+                            <h3>抵達美麗海水族館・午餐</h3>
+                            <p>在水族館周邊的餐廳享用午餐，可品嚐海鮮料理。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">下午</div>
+                        <div class="event">
+                            <h3>參觀美麗海水族館</h3>
+                            <p>參觀世界著名的沖繩美麗海水族館，欣賞巨大的黑潮之海水槽和鯨鯊展示。</p>
+                            <p>水族館周邊還有海豚表演和熱帶夢幻中心等設施可參觀。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">晚上</div>
+                        <div class="event">
+                            <h3>前往名護市・晚餐・入住</h3>
+                            <p>前往名護市區入住酒店，享用當地特色晚餐。</p>
+                            <p>推薦住宿：名護市區酒店，如Hotel Yugaf Inn Okinawa、ホテルゆがふいんおきなわ等</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-spots">
+                    <div class="spot">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Okinawa_Churaumi_Aquarium.jpg/1280px-Okinawa_Churaumi_Aquarium.jpg" alt="美麗海水族館">
+                        <h4>美麗海水族館</h4>
+                        <p>沖繩最著名的景點之一，擁有世界最大的水族箱之一「黑潮之海」，可近距離觀賞鯨鯊和蝠鱝等大型海洋生物。</p>
+                    </div>
+                    <div class="spot">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Cape_Zanpa_Lighthouse_2.jpg/1280px-Cape_Zanpa_Lighthouse_2.jpg" alt="殘波岬">
+                        <h4>殘波岬</h4>
+                        <p>位於讀谷村的美麗海岬，有白色燈塔和壯觀的海蝕地形，是欣賞日落的絕佳地點。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="day3" class="section day-section">
+        <div class="container">
+            <h2>第三天：古宇利島・備瀨福木林道</h2>
+            <div class="day-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time">上午</div>
+                        <div class="event">
+                            <h3>前往古宇利島</h3>
+                            <p>早餐後，從名護市出發前往古宇利島，車程約30分鐘。</p>
+                            <p>途經古宇利大橋，欣賞湛藍海水和珊瑚礁的美景。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">中午</div>
+                        <div class="event">
+                            <h3>古宇利島觀光・午餐</h3>
+                            <p>在古宇利島上的海灘漫步，參觀古宇利海洋塔。</p>
+                            <p>在島上的餐廳享用海鮮午餐，品嚐新鮮的當地食材。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">下午</div>
+                        <div class="event">
+                            <h3>備瀨福木林道</h3>
+                            <p>前往備瀨福木林道，漫步於綠蔭隧道，感受大自然的寧靜。</p>
+                            <p>可租借自行車沿著林道騎行，體驗不同的旅遊方式。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">晚上</div>
+                        <div class="event">
+                            <h3>返回名護市・晚餐・入住</h3>
+                            <p>返回名護市區，享用當地特色晚餐。</p>
+                            <p>繼續入住名護市區酒店。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-spots">
+                    <div class="spot">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Kouri_Bridge_from_Kouri_Ocean_Tower.jpg/1280px-Kouri_Bridge_from_Kouri_Ocean_Tower.jpg" alt="古宇利大橋">
+                        <h4>古宇利大橋</h4>
+                        <p>連接本島與古宇利島的橋樑，全長約2公里，兩側是令人驚嘆的翡翠綠海水，被譽為「心形島」的入口。</p>
+                    </div>
+                    <div class="spot">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Bise_Fukugi_Tree_Road_Motobu_Okinawa_Japan.jpg/1280px-Bise_Fukugi_Tree_Road_Motobu_Okinawa_Japan.jpg" alt="備瀨福木林道">
+                        <h4>備瀨福木林道</h4>
+                        <p>由300年以上歷史的福木樹所形成的綠色隧道，是沖繩傳統的防風林，提供清涼的遮蔭和獨特的自然體驗。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="day4" class="section day-section">
+        <div class="container">
+            <h2>第四天：萬座毛・南部戰跡</h2>
+            <div class="day-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time">上午</div>
+                        <div class="event">
+                            <h3>前往萬座毛</h3>
+                            <p>早餐後，從名護市出發前往萬座毛，車程約40分鐘。</p>
+                            <p>欣賞象鼻狀的海蝕岩和壯觀的東海岸景色。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">中午</div>
+                        <div class="event">
+                            <h3>恩納村・午餐</h3>
+                            <p>在恩納村的海景餐廳享用午餐，品嚐當地特色料理。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">下午</div>
+                        <div class="event">
+                            <h3>南部戰跡・和平祈念公園</h3>
+                            <p>前往沖繩南部，參觀和平祈念公園和沖繩縣立和平祈念資料館，了解二戰歷史。</p>
+                            <p>參觀知名的平和之鐘和平和之火。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">晚上</div>
+                        <div class="event">
+                            <h3>返回那霸・晚餐・入住</h3>
+                            <p>返回那霸市區，在國際通或牧志市場享用晚餐。</p>
+                            <p>入住那霸市區酒店。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-spots">
+                    <div class="spot">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Cape_Manzamo_Onna_Okinawa_Japan.jpg/1280px-Cape_Manzamo_Onna_Okinawa_Japan.jpg" alt="萬座毛">
+                        <h4>萬座毛</h4>
+                        <p>位於恩納村的著名景點，有象鼻狀的海蝕岩石和壯觀的懸崖海景，是沖繩的代表性景觀之一。</p>
+                    </div>
+                    <div class="spot">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Okinawa_Peace_Memorial_Park.jpg/1280px-Okinawa_Peace_Memorial_Park.jpg" alt="和平祈念公園">
+                        <h4>和平祈念公園</h4>
+                        <p>位於沖繩南部的糸滿市，紀念二戰沖繩戰役的犧牲者，園內有和平之火、和平之鐘和刻有死難者姓名的黑色花崗岩牆。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="day5" class="section day-section">
+        <div class="container">
+            <h2>第五天：那霸市區・賦歸</h2>
+            <div class="day-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time">上午</div>
+                        <div class="event">
+                            <h3>波上宮・新都心</h3>
+                            <p>早餐後，參觀那霸市區的波上宮，這是沖繩最古老的神社之一。</p>
+                            <p>前往新都心購物中心，採購伴手禮和紀念品。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">中午</div>
+                        <div class="event">
+                            <h3>午餐・最後購物</h3>
+                            <p>在新都心或國際通享用午餐，最後的購物時間。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">下午</div>
+                        <div class="event">
+                            <h3>返還租車・準備登機</h3>
+                            <p>返回那霸機場還車，辦理登機手續。</p>
+                            <p>機場免稅店最後採購。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">晚上</div>
+                        <div class="event">
+                            <h3>賦歸</h3>
+                            <p>搭乘晚班機返回，結束愉快的沖繩之旅。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-spots">
+                    <div class="spot">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Naminoue_Shrine_Naha_Okinawa_Japan.jpg/1280px-Naminoue_Shrine_Naha_Okinawa_Japan.jpg" alt="波上宮">
+                        <h4>波上宮</h4>
+                        <p>那霸市區最重要的神社，建於海邊的懸崖上，供奉著海神，是當地人祈求平安的重要場所。</p>
+                    </div>
+                    <div class="spot">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Okinawa_Outlet_Mall_Ashibinaa.jpg/1280px-Okinawa_Outlet_Mall_Ashibinaa.jpg" alt="新都心購物中心">
+                        <h4>新都心購物中心</h4>
+                        <p>那霸市的現代購物區，有大型商場和各種商店，是採購伴手禮和紀念品的理想場所。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tips" class="section">
+        <div class="container">
+            <h2>旅遊貼士</h2>
+            <div class="tips-container">
+                <div class="tip-item">
+                    <h3>最佳旅遊季節</h3>
+                    <p>沖繩全年氣候溫暖，最佳旅遊時間為3-5月和10-11月，避開梅雨季(5月下旬-6月)和颱風季(7-9月)。</p>
+                </div>
+                <div class="tip-item">
+                    <h3>自駕注意事項</h3>
+                    <p>沖繩靠左行駛，需要國際駕照。高速公路收費，但大部分景點間的移動可使用免費道路。加油站在主要城市和觀光區較多，建議油量低於一半時就加油。</p>
+                </div>
+                <div class="tip-item">
+                    <h3>必吃美食</h3>
+                    <ul>
+                        <li>沖繩麵 - 與日本其他地區的烏龍麵不同，口感更有嚼勁</li>
+                        <li>塔可飯 - 沖繩版的墨西哥捲餅，混合了美式和日式風味</li>
+                        <li>海葡萄 - 特色海藻，口感爽脆，富含礦物質</li>
+                        <li>島豆腐 - 比一般豆腐更硬更有嚼勁</li>
+                        <li>黑糖甜點 - 沖繩特產黑糖製成的各種甜品</li>
+                    </ul>
+                </div>
+                <div class="tip-item">
+                    <h3>必買伴手禮</h3>
+                    <ul>
+                        <li>紅芋塔 - 使用沖繩紫薯製作的酥皮點心</li>
+                        <li>黑糖產品 - 沖繩特產黑糖製成的糖果、餅乾等</li>
+                        <li>泡盛酒 - 沖繩特產米酒，有各種品牌和口味</li>
+                        <li>石獅子(シーサー) - 沖繩傳統守護神雕像</li>
+                        <li>沖繩傳統織物 - 琉球紅型、紅花織等傳統工藝品</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>沖繩五天四夜自駕遊行程規劃 | 本網站僅供參考，實際行程請依當地情況調整</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
